@@ -2,19 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCController : MonoBehaviour
+public class NPCController : BaseController
 {
-    Collider2D collider2D;
-    PlayerController playerController;
+    Collider2D _collider2D;
+    Transform target;
 
-    private void Awake()
+    protected override void Awake()
     {
-        collider2D = GetComponent<Collider2D>();
-        playerController = GetComponent<PlayerController>();
+        base.Awake();
+        _collider2D = GetComponent<Collider2D>();
+        target = GameObject.FindWithTag("Player").transform;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void Update()
     {
-        
+        lookDirection = DirectionToTarget();
+        base.Update();
+    }
+
+    protected Vector2 DirectionToTarget()
+    {
+        return (target.position - transform.position).normalized;
     }
 }
