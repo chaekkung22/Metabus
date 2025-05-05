@@ -8,6 +8,9 @@ public class PlayerController : BaseController
     StatHandler statHandler;
     AnimationHandler animationHandler;
     [SerializeField]GameObject pressE;
+    [SerializeField] GameObject choiceGame;
+
+    bool isNearNPC = false;
 
     protected override void Awake()
     {
@@ -20,6 +23,12 @@ public class PlayerController : BaseController
         base.Update();
         Movement();
         animationHandler.Move(movementDirection);
+
+        if (isNearNPC && Input.GetKeyDown(KeyCode.E))
+        {
+            UIManager.Instance.ShowChoiceGame();
+        }
+
     }
 
 
@@ -39,27 +48,25 @@ public class PlayerController : BaseController
         transform.position += (Vector3)movementDirection * statHandler.Speed * Time.deltaTime;
     }
 
-    void ChoiceGame()
-    {
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            //게임을 선택하는 UI를 띄우기
-        }
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("NPC"))
         {
             pressE.SetActive(true);
+            isNearNPC = true;
         }
     }
+
+
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("NPC"))
         {
             pressE.SetActive(false);
+            UIManager.Instance.CloseChoiceGame();
+            isNearNPC = false;
         }
     }
 }
