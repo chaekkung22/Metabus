@@ -25,6 +25,8 @@ public class Airplane : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!GameManager.Instance.isGameStart) return;
+
         if (isDead)
         {
             if (deathCooldown <= 0f)

@@ -15,4 +15,31 @@ public class Obstacle : MonoBehaviour
 
     float interval = 4f;
 
+    GameManager gameManager;
+
+    public Vector3 SetRandomPlace(Vector3 lastPos, int obstacleCount)
+    {
+        float holeSize = Random.Range(holeSizeMin, holeSizeMax);
+        float halfHoleSize = holeSize / 2;
+
+        topObject.localPosition = new Vector3(0, halfHoleSize);
+        bottomObject.localPosition = new Vector3(0, -halfHoleSize);
+
+        Vector3 placePosition = lastPos + new Vector3(interval, 0);
+        placePosition.y = Random.Range(lowPosY, highPosY);
+
+        transform.position = placePosition;
+
+        return placePosition;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Airplane airplane = collision.GetComponent<Airplane>();
+        if (airplane != null)
+        {
+            gameManager.AddScore(1);
+        }
+    }
+
 }
