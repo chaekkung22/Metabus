@@ -21,9 +21,13 @@ public class FlappyGameUIManager : MonoBehaviour
     {
         gameOverUI.SetActive(true);
     }
-
+    public void Restart()
+    {
+        SceneManager.LoadScene("FlappyPlaneScene");
+    }
     public void GameQuit()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("TileMapScene");
     }
 

@@ -25,7 +25,6 @@ public class Airplane : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameManager.Instance.isGameStart) return;
 
         if (isDead)
         {
@@ -48,6 +47,7 @@ public class Airplane : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         if (isDead) return;
 
         Vector2 velocity = _rigidbody2D.velocity;
@@ -75,5 +75,6 @@ public class Airplane : MonoBehaviour
         isDead = true;
 
         animator.SetBool("IsDie", true);
+        GameManager.Instance.GameOver();
     }
 }

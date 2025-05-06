@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &16251738
 RectTransform:
   m_ObjectHideFlags: 0
@@ -440,7 +440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &125681972
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1143,7 +1143,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 321922879}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1420179719}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: GameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &321922879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1860,7 +1872,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 813002638}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2015645424}
+        m_TargetAssemblyTypeName: FlappyGameUIManager, Assembly-CSharp
+        m_MethodName: GameQuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &813002638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3396,7 +3420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc8e5ad703af8d429a24346c0fcd527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGameStart: 0
+  uiManager: {fileID: 2015645424}
 --- !u!4 &1420179720
 Transform:
   m_ObjectHideFlags: 0
@@ -3580,7 +3604,7 @@ MonoBehaviour:
   flapForce: 6
   forwardSpeed: 3
   isDead: 0
-  godMode: 1
+  godMode: 0
 --- !u!61 &1505272908
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4072,7 +4096,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1575733109}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2015645424}
+        m_TargetAssemblyTypeName: FlappyGameUIManager, Assembly-CSharp
+        m_MethodName: CloseHowToPlay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1575733109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4671,7 +4707,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1634720277}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2015645424}
+        m_TargetAssemblyTypeName: FlappyGameUIManager, Assembly-CSharp
+        m_MethodName: ShowHowToPlay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1634720277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6055,7 +6103,7 @@ GameObject:
   - component: {fileID: 2015645420}
   - component: {fileID: 2015645424}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UIManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6162,8 +6210,8 @@ MonoBehaviour:
   gameStartUI: {fileID: 125681971}
   gameOverUI: {fileID: 1553196017}
   howToPlayUI: {fileID: 1697009394}
-  scoreText: {fileID: 0}
-  bestScoreText: {fileID: 0}
+  scoreText: {fileID: 2018351517}
+  bestScoreText: {fileID: 1122650518}
 --- !u!1 &2018351515
 GameObject:
   m_ObjectHideFlags: 0

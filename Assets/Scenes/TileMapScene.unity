@@ -5803,6 +5803,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1368680896643267993, guid: 56fa10ca9c587c54aa016f0575c27714, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5204781626594930085, guid: 56fa10ca9c587c54aa016f0575c27714, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5
@@ -5846,6 +5850,10 @@ PrefabInstance:
     - target: {fileID: 5977312390424966685, guid: 56fa10ca9c587c54aa016f0575c27714, type: 3}
       propertyPath: m_Name
       value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112485091001528485, guid: 56fa10ca9c587c54aa016f0575c27714, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

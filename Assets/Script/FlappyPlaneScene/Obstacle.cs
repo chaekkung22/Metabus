@@ -15,7 +15,6 @@ public class Obstacle : MonoBehaviour
 
     float interval = 4f;
 
-    GameManager gameManager;
 
     public Vector3 SetRandomPlace(Vector3 lastPos, int obstacleCount)
     {
@@ -38,7 +37,7 @@ public class Obstacle : MonoBehaviour
         Airplane airplane = collision.GetComponent<Airplane>();
         if (airplane != null)
         {
-            gameManager.AddScore(1);
+            GameManager.Instance.AddScore(1);
         }
     }
 
