@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get { return gameManager; } }
 
     bool isGameOver = false;
+    public bool isMissionSucess = false;
 
     private int currentScore = 0;
     private int bestScore = 0;
@@ -20,13 +21,18 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
+
     private void Update()
     {
         if (isGameOver && Input.anyKeyDown)
         {
             isGameOver = false;
             uiManager.Restart();
+            isMissionSucess = false;
         }
+
+        if (currentScore >= 20)
+            isMissionSucess = true;
     }
 
     public void GameStart()

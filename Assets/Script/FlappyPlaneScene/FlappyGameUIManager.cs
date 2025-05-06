@@ -10,7 +10,11 @@ public class FlappyGameUIManager : MonoBehaviour
     [SerializeField] GameObject gameOverUI;
     [SerializeField] GameObject howToPlayUI;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI gameOverUIScoreText;
     [SerializeField] TextMeshProUGUI bestScoreText;
+    [SerializeField] TextMeshProUGUI gameOverUIBestScoreText;
+    [SerializeField] TextMeshProUGUI SucessOrFailed;
+
 
     public void GameStart()
     {
@@ -20,6 +24,7 @@ public class FlappyGameUIManager : MonoBehaviour
     public void GameOver()
     {
         gameOverUI.SetActive(true);
+        IsMissionSucess();
     }
     public void Restart()
     {
@@ -46,11 +51,20 @@ public class FlappyGameUIManager : MonoBehaviour
     public void UpdateScore(int score)
     {
         scoreText.text = score.ToString();
+        gameOverUIScoreText.text = score.ToString();
     }
 
     public void UpdateBestScore(int bestScore)
     {
         bestScoreText.text = bestScore.ToString();
+        gameOverUIBestScoreText.text = bestScore.ToString();
+    }
+
+    public void IsMissionSucess()
+    {
+        if (GameManager.Instance.isMissionSucess)
+            SucessOrFailed.text = "Mission Sucess!";
+        else SucessOrFailed.text = "Mission Failed..";
     }
 
 
